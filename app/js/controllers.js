@@ -17,7 +17,7 @@ angular.module('myApp.controllers', [])
 .controller('businessDashboardCtrl', ['$rootScope', '$scope', 'syncData', 'FBURL', function ($rootScope, $scope, syncData, FBURL) {
    $rootScope.color = "warning";
    $scope.userId = $scope.auth.user.uid;
-   $scope.userId = $scope.auth.user.uid;
+   $rootScope.userId = $scope.auth.user.uid;
    $scope.user = syncData('users/' + $scope.userId);
    var ref = new Firebase(FBURL + '/users/' + $scope.userId + "/business");
    ref.on('child_added', function(snap){
@@ -189,6 +189,7 @@ angular.module('myApp.controllers', [])
          $scope.business = syncData('businesses/' + snap.name());
          $scope.businessId = snap.name();
          $scope.business.$child('users').$child($scope.userId).$set(true);
+         $scope.business.$child('admin').$set($scope.userId);
 
          var busRef = new Firebase('http://clurtch-data-test.firebaseio.com/businesses/' + snap.name() + "/users");
 
@@ -231,6 +232,7 @@ angular.module('myApp.controllers', [])
 
       $scope.addBusiness = function(userId){
          $scope.user.$child('business').$add(true);
+         //$scope.business.$child('business').$add(true);
       }
 
       $scope.logout = function() {

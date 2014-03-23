@@ -54,12 +54,13 @@
 					</div>
 					<div class="align-center ">Network</div>
 				</a>
-				<a transit href="#/settings/business/{{businessId}}" class="well-block point well-inverse">
+				<a transit href="#/settings/business/{{businessId}}" class="well-block point well-inverse" ng-if="business.admin == userId">
 					<div>
 						<i class="fa fa-cogs dashboard-icon"></i>
 					</div>
 					<div class="align-center ">Settings</div>
 				</a>
+				
 			</div>
 		</div>			
 	</div>
