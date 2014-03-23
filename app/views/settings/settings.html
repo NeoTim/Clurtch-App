@@ -1,0 +1,48 @@
+<div content-for="title">
+    <span >Settings</span>
+</div>
+
+<div class="scrollable scrollable-list">
+  <div class="scrollable-content">
+    <div class="list-group">
+    	<a class="list-group-item list-divider"></a>
+    	
+      <a ng-href="#/settings/account" class="list-group-item media">
+	      <div class="pull-left">
+	        <i class="fa fa-user list-icon"></i>
+	      </div>
+	      <div class="media-body">
+			<h4 class="media-heading">Account Settings
+        			<i class="fa fa-chevron-right pull-right"></i>
+			</h4>
+		</div>
+      </a>
+
+      <a ng-if="business.admin == userId" ng-href="#/settings/business/{{businessId}}" class="list-group-item media">
+	      <div class="pull-left">
+	        <i class="fa fa-briefcase list-icon"></i>
+	      </div>
+	      <div class="media-body">
+			<h4 class="media-heading">Business Settings
+        			<i class="fa fa-chevron-right pull-right"></i>
+			</h4>
+		</div>
+      </a>
+      <a class="list-group-item list-divider"></a>
+      <a ng-click="logout()" class="list-group-item media">
+	      <div class="pull-left">
+	        <i class="fa fa-sign-out list-icon"></i>
+	      </div>
+	      <div class="media-body">
+			<h4 class="media-heading">Logout
+        			
+			</h4>
+		</div>
+      </a>
+
+ 
+
+
+    </div>
+  </div>
+</div>

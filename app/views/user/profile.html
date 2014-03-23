@@ -1,0 +1,78 @@
+ <div content-for="title">
+  <span>{{account.username}}</span>
+  
+</div>
+
+<div content-for="backBtn">
+	<a ng-href="{{oldHash}}" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+<div class="scrollable scrollable-list">
+  	<div class="scrollable-content">
+		
+		<div class="list-group" ng-if="account.profileSettings.showBusiness; account.business">
+			<span class="list-group-item list-divider"></span>
+			<span class="list-group-item media">
+				<div class="pull-left">
+		        		<!-- <i class="fa fa-users list-icon"></i> -->
+		        		<!-- <div class="icon-social-apple list-icon2" aria-hidden="true" ></div> -->
+		        		<span class=" typcn typcn-business-card list-typcn"><span>
+		        		<!-- <span class="entypo list-entypo">&#59136</span> -->
+		      	</div>	
+		      	<div class="media-body">
+		      		<h4 class="media-heading">Business</h4>
+		      	</div>
+			</span>
+			<a class="list-group-item media" ng-href="#/businesses/{{businessId}}">
+			      <div class="pull-left">
+			        	<i class="fa fa-user chat-user-avatar"></i>
+			      </div>
+
+			      <div class="media-body">
+			          <h5 class="media-heading">{{business.name}}
+			          </h5>
+			          <p>{{business.email}}</p>
+			      </div>
+			
+		    	</a>
+
+		</div>
+		<div class="list-group">
+			<!-- <span class="list-group-item list-divider"></span> -->
+			<span class="list-group-item media" ng-if="account.profileSettings.showPhone; account.phone">
+				<span class="pull-left">
+					<i class="fa fa-phone list-icon"></i>
+				</span>
+				<div class="media-body">
+					<h5 class="media-heading">{{account.phone}}</h5>
+				</div>
+			</span>
+			<span class="list-group-item media" ng-if="account.profileSettings.showEmail; account.email">
+				<span class="pull-left">
+					<i class="fa fa-envelope list-icon"></i>
+				</span>
+				<div class="media-body">
+					<h5 class="media-heading">{{account.email}}</h5>
+				</div>
+			</span>
+			<span class="list-group-item media" ng-if="account.profileSettings.showTwitter; account.twitter">
+				<span class="pull-left">
+					<i class="fa fa-twitter list-icon"></i>
+				</span>
+				<div class="media-body">
+					<h5 class="media-heading">{{account.twitter}}</h5>
+				</div>
+			</span>
+			<span class="list-group-item media" ng-if="account.profileSettings.showFacebook; account.facebook">
+				<span class="pull-left">
+					<i class="fa fa-facebook list-icon"></i>
+				</span>
+				<div class="media-body">
+					<h5 class="media-heading">{{account.facebook}}</h5>
+				</div>
+			</span>
+		</div>
+
+	</div>
+</div>

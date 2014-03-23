@@ -1,0 +1,160 @@
+<div content-for="title">
+    <span >My Account</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group">
+      <a ng-href="#/settings/account" class="list-group-item media">
+	      <div class="pull-left">
+	        <i class="fa fa-user list-icon"></i>
+	      </div>
+	      <div class="media-body">
+			<h4 class="media-heading">Account Settings
+        			<i class="fa fa-chevron-right pull-right"></i>
+			</h4>
+		</div>
+      </a>
+
+      <a ng-href="#/settings/business" class="list-group-item media">
+	      <div class="pull-left">
+	        <i class="fa fa-briefcase list-icon"></i>
+	      </div>
+	      <div class="media-body">
+			<h4 class="media-heading">Business Settings
+        			<i class="fa fa-chevron-right pull-right"></i>
+			</h4>
+		</div>
+      </a>
+
+ 
+
+
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="scrollable">  
+	<div class="scrollable-content ">
+		
+		<div class="col-md-8 col-md-offset-2" data-ng-init="init(account.business)">
+			<form>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Account Info</h3>
+					</div>
+					<div class="panel-body">
+											
+						<input type="text" name="name" ng-model="user.firstName" placeholder="First Name" class="form-control" />
+				
+						<input type="text" name="name" ng-model="user.lastName" placeholder="Last Name" class="form-control" />
+				
+						<input type="text" name="name" ng-model="user.username" placeholder="Username" class="form-control" />
+				
+						<input type="text" name="name" ng-model="user.email" placeholder="Email" class="form-control" />
+													
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Business Info
+							<div  ng-if="!user.business">
+								<button ng-click="addBusiness(userId)" class="btn btn-primary pull-right">Add Business</button>
+							</div>
+						</h3>
+					</div>
+					<div class="panel-body">
+
+						<div ng-if="user.business">
+							<label>Category</label>
+							<select name="name" ng-model="business.category" data-ng-change="business.$save()" class="form-control">
+										<option>Categories</option>
+										<option ng-repeat="cat in categories" >{{cat}}</option>
+							</select>
+
+							<label ng-if="business.category">{{business.category}}</label>
+
+							<label ng-if="!business.category">Business</label>
+							<input type="text" name="name" ng-model="business.name" class="form-control" ng-change="business.$save()" />
+						
+							<button ng-click="deleteBusiness(business.$id)" class="btn btn-danger">Delete Business</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					  <div class="panel-heading">
+							<h3 class="panel-title">{{business.name}} Users</h3>
+					  </div>
+					  <div class="panel-body">
+					  <!-- <input type="text" ui-select2="{multiple: true, simple_tags:true}" ng-model="users"> -->
+					 <!--  <input
+					    type="text"
+					    data-placeholder="Select Users"
+					    ui-select2="select2Options"
+					    ng-model="business.pending"
+					    style="width:100%;"
+					    ng-change="updateBusiness(business.users)"
+					    > -->
+					 	<select ui-select2="{multiple: ture, simple_tags: true}" ng-model="newUser" ng-change="addUser(newUser)" data-placeholder="Find Users" style="width:100%;">
+							    <option value=""></option>
+							    <option ng-repeat="(uid, user) in users" value="{{uid}}">{{user.email}}</option>
+						</select> 
+							<ul class="list-group">
+								<li class="list-group-item media"  ng-repeat=" buser in busUsers" >
+							      <div class="pull-left">
+							        <a ng-href="#/users/{{buser.$id}}">
+							        <i class="fa fa-user chat-user-avatar"></i>
+							        </a>
+							      </div>
+							      <span class="pull-right">
+							            <bs-switch
+								            ng-model="isSelected"
+								            type="radio"
+								            switch-active="{{ isActive }}"
+								            switch-on-label="{{ onLabel }}"
+								            switch-off-label="{{ offLabel }}"
+								            switch-on="{{ on }}"
+								            switch-off="{{ off }}"
+								            switch-animate="{{ animate }}"
+								            switch-size="{{ size }}"
+								            switch-label="{{ label }}"
+								            switch-icon="{{ icon }}"></bs-switch>
+							      </span>
+							      <div class="media-body">
+							          <h5 class="media-heading">{{buser.username}}</h5>
+							          <p>{{buser.email}}</p>
+							          
+							      </div>
+							      
+							    </li>
+							</ul>
+
+
+					  </div>
+				</div>
+				
+
+				</form>
+				<div class="panel panel-default">
+					  <div class="panel-heading">
+							<h3 class="panel-title">Reset Password</h3>
+					  </div>
+					  <div class="panel-body">
+					  		<label>Old Password</label>
+							<input type="password" ng-keypress="reset()" ng-model="oldpass" lable="Password" bs-input/>
+					  		<label>New Password</label>
+							<input type="password" ng-keypress="reset()" ng-model="newpass" label="New" bs-input />
+					  		<label>Confirm Password</label>
+							<input type="password" ng-keypress="reset()" ng-model="confirm" label="Confirm" bs-input/>
+							<button class="btn btn-primary" ng-click="updatePassword()">Done</button>
+
+							<p class="error" ng-show="err">{{err}}</p>
+							<p class="good" ng-show="msg">{{msg}}</p>
+					  </div>
+				</div>
+					<button class="btn btn-danger btn-block" ng-click="logout()">Log Out</button>
+			</div>
+	</div>
+</div> -->

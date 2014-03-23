@@ -1,0 +1,93 @@
+<div content-for="title">
+<span>Account Settings</span>
+</div>
+
+<div content-for="backBtn">
+	<a ng-href="#/settings" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+
+<div class="scrollable scrollable-list">
+	<div class="scrollable-content">
+
+		<form>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					
+					<label>First Name</label>	
+					<input type="text" name="name" ng-model="user.firstName" placeholder="First Name" class="form-control" />
+			
+					<label>Last Name</label>	
+					<input type="text" name="name" ng-model="user.lastName" placeholder="Last Name" class="form-control" />
+				</div>
+			</div>
+		</form>
+
+		<ul class="list-group">
+			<li class="list-group-item media">
+		      <div class="pull-left">
+		        	<i class="fa fa-user toggle-icon"></i>
+		      </div>
+		      <div class="media-body">
+		          <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+		      </div>
+		    </li>
+		    <li class="list-group-item media">
+		      <div class="pull-left">
+		        	<i class="fa fa-envelope toggle-icon"></i>
+		      </div>
+		      <div class="media-body">
+		          <input type="text" class="form-control" ng-model="user.email" placeholder="Email">
+		      </div>
+		    </li>
+		    <li class="list-group-item media">
+		      <div class="pull-left">
+		        	<i class="fa fa-twitter toggle-icon"></i>
+		      </div>
+		      <div class="media-body">
+		          <input type="text" class="form-control" ng-model="user.twitter" placeholder="@twitteraccount">
+		      </div>
+		    </li>
+		    <li class="list-group-item media" >
+		      <div class="pull-left">
+		        	<i class="fa fa-facebook toggle-icon"></i>
+		      </div>
+		      <div class="media-body">
+		          <input type="text" class="form-control" ng-model="user.facebook" placeholder="Facebook">
+		      </div>
+		    </li>
+		    <span class="list-group-item list-divider"></span>
+		    	<a href="#/settings/account/{{userId}}/profile" class="list-group-item">
+		    		<div class="pull-left">
+			        	<i class="fa fa-wrench list-icon"></i>
+			      </div>
+			      <div class="media-body">
+					<h4 class="media-heading">Profile toggle
+		        			<i class="fa fa-chevron-right pull-right"></i>
+					</h4>
+				</div>
+		    	</a>
+		</ul>
+
+
+		<div class="panel panel-default">
+			  <div class="panel-heading">
+					<h3 class="panel-title">Reset Password</h3>
+			  </div>
+			  <div class="panel-body">
+			  		<label>Old Password</label>
+					<input type="password" ng-keypress="reset()" ng-model="oldpass" lable="Password" bs-input/>
+			  		<label>New Password</label>
+					<input type="password" ng-keypress="reset()" ng-model="newpass" label="New" bs-input />
+			  		<label>Confirm Password</label>
+					<input type="password" ng-keypress="reset()" ng-model="confirm" label="Confirm" bs-input/>
+					<button class="btn btn-primary" ng-click="updatePassword()">Done</button>
+
+					<p class="error" ng-show="err">{{err}}</p>
+					<p class="good" ng-show="msg">{{msg}}</p>
+			  </div>
+		</div>
+			<button class="btn btn-danger btn-block" ng-click="logout()">Log Out</button>
+	</div>
+</div>

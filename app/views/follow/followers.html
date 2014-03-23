@@ -1,0 +1,40 @@
+
+<div content-for="title">
+  <span>Followers</span>
+</div>
+<div content-for="backBtn">
+  <a ng-href="#/business" class="btn btn-navbar">
+    <i class="fa fa-chevron-left"></i> 
+  </a>
+</div>
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group" toggle="off" bubble target="rightSidebar">
+
+
+    <a class="list-group-item media"  ng-repeat="(aid, account) in accounts" ng-href="#/users/{{account.$id}}">
+      <div class="pull-left">
+        
+        <i class="fa fa-user chat-user-avatar"></i>
+        
+      </div>
+      <div class="media-body">
+          <h5 class="media-heading">{{account.username}}</h5>
+          <p>{{account.email}}</p>
+          <!-- <small ng-switch on="account.online">
+              <span ng-switch-when="true">
+                <span class="label label-success">ONLINE</span>
+              </span>
+              <span ng-switch-default>
+                <span class="label label-default"><i>OFFLINE</i></span>
+              </span>
+          </small> -->
+      </div>
+    </a>
+
+
+
+
+    </div>
+  </div>
+</div>

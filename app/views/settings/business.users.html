@@ -1,0 +1,60 @@
+<div content-for="title">
+    <span >{{user.firstName}} {{user.lastName}}</span>
+</div>
+<div content-for="backBtn">
+	<a ng-href="{{oldHash}}" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+
+<div class="scrollable scrollable-list">
+  	<div class="scrollable-content">
+    		<ul class="list-group">
+    			<li class="list-group-item list-divider"></li>
+		      <li ng-href="#/settings/account" class="list-group-item media">
+			      
+					<h5 class="media-heading">
+						Business Chat
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.canChat"
+						            type="radio"
+						            ng-change="toggle('canChat', settings.canChat)"
+						            switch-active="{{ isChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}">
+						            </bs-switch>
+					      </span>
+					</h5>
+				
+		      </li>
+		      <li ng-href="#/settings/account" class="list-group-item media">
+					<h5 class="media-heading">
+						Show in business profile
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showProfile"
+						            type="radio"
+						            ng-change="toggle('showProfile', settings.showProfile)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h5>
+		      </li>
+		      <li class="list-group-item list-divider"></li>
+		</ul>
+		<button ng-click="deleteUser(uid, businessId)" type="button" class="btn btn-danger btn-block">Remove From Business</button>
+  	</div>

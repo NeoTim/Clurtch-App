@@ -1,0 +1,197 @@
+#lightbulb {
+  font-size: 100px;
+  display: block;
+  text-align: center;
+}
+
+h1 {
+  padding: 0;
+  margin: 10px 0;
+}
+
+.chat-user-avatar {
+  font-size: 40px;
+  background: #ccc;
+  padding: 5px 10px;
+}
+
+.feature-icon {
+  font-size: 44px;
+padding: 0;
+color: #15aaff;
+line-height: 64px;
+width: 64px;
+text-align: center;
+opacity: .8;
+}
+.dashboard-icon {
+  font-size: 70px;
+  padding: 0;
+  /*color: #15aaff;*/
+  line-height: 64px;
+  width: 100%;
+  text-align: center;
+  
+}
+.dashboard-typcn {
+  font-size: 70px;
+  padding: 0;
+  display: block;  
+  margin:0 0 10px 0;
+  /*color: #15aaff;*/
+  line-height: 54px;
+
+  text-align: center;
+  
+}
+.dashboard-typcn:before {
+  font-size: 70px;
+  padding: 0;
+  display: inline-block;  
+  margin:0px 0 10px 0;
+  /*color: #15aaff;*/
+  line-height: 30px;
+
+  text-align: center;
+  
+}
+.toggle-icon {
+  font-size: 30px;
+  padding: 0;
+  color: #15aaff;
+  line-height: 34px;
+  width: 40px;
+  text-align: center;
+  opacity: .8;
+}
+.list-icon {
+  font-size: 20px;
+  padding: 0;
+  margin: 0 20px 0 0;
+  color: #15aaff;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  opacity: .8;
+}
+
+.list-icon2 {
+  font-size: 60px;
+  padding: 0;
+  color: #15aaff;
+  line-height: 20px;
+  /*width: 20px;*/
+  text-align: center;
+  opacity: .8;
+}
+
+.list-entypo {
+  font-size: 40px;
+  padding: 0;
+  margin: 0 16px 0 0;
+  color: #15aaff;
+  line-height: 16px;
+  width: 20px;
+  height: 18px;
+  text-align: center;
+  opacity: .8;
+}
+
+.list-typcn {
+  font-size: 30px;
+  padding: 0;
+  margin: 0 20px 0 0;
+  height:20px;
+  color: #15aaff;
+  line-height: 14px;
+  width: 20px;
+  height: 18px;
+  text-align: center;
+  opacity: .8;
+}
+.list-head {
+  text-align: center;
+}
+
+.app-content-loading {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.loading-spinner {
+  position: absolute;
+  font-size: 50px;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.carousel-example-content {
+  position: absolute;
+  font-size: 50px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-top: -50px;
+}
+
+
+.carousel .item {
+  color: #444;
+  background: #f4f4f4;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+
+.carousel {
+  padding: 20px;
+  overflow: visible;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: visible;
+
+}
+
+.carousel-inner>.item {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner>.item:first-child {
+  z-index: 1998; 
+}
+
+.carousel-inner>.item.active {
+  z-index: 2000;
+}
+
+.carousel-inner>.item.active + .item {
+  z-index: 1999;
+}
+
+.list-group-item.list-divider {
+  padding:23px;
+  background: none;
+  background-color: none;
+  border: none;
+}
+
+
+.typcn.typcn-btn {
+  float: left;
+  font-size: 16px;
+  margin: 0 20px 0 0;
+  line-height: 20px;
+  height: 20px;
+}

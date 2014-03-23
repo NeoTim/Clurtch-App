@@ -1,0 +1,167 @@
+<div content-for="title">
+    <span>{{business.name}}</span>
+</div>
+
+<div content-for="backBtn">
+	<a ng-href="#/settings" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+<div class="scrollable scrollable-list">
+	<div class="scrollable-content">
+		<!-- <div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Business Info
+					<div  ng-if="!user.business">
+						<button ng-click="addBusiness(userId)" class="btn btn-primary pull-right">Add Business</button>
+					</div>
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div ng-if="user.business">
+					<div class="form-group">
+						<label>Category</label>
+						<select name="name" ng-model="business.category" data-ng-change="business.$save()" class="form-control">
+									<option>Categories</option>
+									<option ng-repeat="cat in categories" >{{cat}}</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label ng-if="business.category">{{business.category}}</label>
+
+						<label ng-if="!business.category">Business</label>
+						<input type="text" name="name" ng-model="business.name" class="form-control" ng-change="business.$save()" />
+					</div>
+					<div class="form-group">
+						<label>Add User</label>
+						<select ui-select2="{multiple: ture, simple_tags: true}" ng-model="newUser" ng-change="addUser(newUser)" data-placeholder="Find Users" style="width:100%;">
+						    <option value=""></option>
+						    <option ng-repeat="(uid, user) in users" value="{{uid}}">{{user.email}}</option>
+						</select> 
+					</div>
+					
+				</div>
+			</div>
+		</div> -->
+		<div class="list-group">
+			<span class="list-group-item list-divider"></span>
+			<span class="list-group-item media">
+		      	<div class="media-body">
+		      		<h4 class="media-heading">Category</h4>
+		      	</div>
+			</span>
+			<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-tags toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+			      	<select name="name" ng-model="business.category" data-ng-change="business.$save()" class="form-control">
+						<option>Categories</option>
+						<option ng-repeat="cat in categories" >{{cat}}</option>
+					</select> 
+				</div>
+		    	</span>
+		    	<span class="list-group-item media">
+		      	<div class="media-body">
+		      		<h4 class="media-heading">Business name</h4>
+		      	</div>
+			</span>
+			<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-briefcase toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+		          		<input type="text" class="form-control" ng-model="business.name" ng-change="business.$save()" placeholder="Business Name">
+		      	</div> 
+		    	</span>
+		    	
+			<span class="list-group-item list-divider"></span>
+			<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-phone toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+		          		<input type="text" class="form-control" ng-model="business.phone" ng-change="business.$save()" placeholder="Phone Number">
+		      	</div>
+		    	</span>
+			<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-envelope toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+		          		<input type="text" class="form-control" ng-model="business.email" ng-change="business.$save()" placeholder="Email">
+		      	</div>
+		    	</span>
+		    	<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-twitter toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+		          		<input type="text" class="form-control" ng-model="business.twitter" ng-change="business.$save()" placeholder="@TwitterAccount">
+		      	</div>
+		    	</span>
+		    	<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="fa fa-facebook toggle-icon"></i>
+		      	</div>
+		      	<div class="media-body">
+		          		<input type="text" class="form-control" ng-model="business.facebook" ng-change="business.$save()" placeholder="facebook">
+		      	</div>
+		    	</span>
+		    	<span class="list-group-item list-divider"></span>
+		    	<span class="list-group-item media">
+		    		<div class="pull-left">
+		        		<i class="typcn typcn-user-add list-typcn"></i>
+		      	</div>
+		      	<div class="media-body">
+		      		<h4 class="media-heading">Add User</h4>
+		      	</div>
+			</span>
+			<span class="list-group-item media">
+		      	<div class="pull-left">
+		        		<i class="typcn typcn-user list-typcn"></i>
+		      	</div>
+		      	<div class="media-body">
+			      	<select ui-select2="{multiple: ture, simple_tags: true}" ng-model="newUser" ng-change="addUser(newUser)" data-placeholder="Find Users" style="width:100%;">
+					    <option value=""></option>
+					    <option ng-repeat="(uid, user) in users" value="{{uid}}">{{user.email}}</option>
+					</select> 
+				</div>
+		    	</span>
+			<span class="list-group-item list-divider"></span>
+			<span class="list-group-item media">
+				<div class="pull-left">
+		        		<i class="typcn typcn-business-card list-typcn"></i>
+		      	</div>	
+		      	<div class="media-body">
+		      		<h4 class="media-heading">Users</h4>
+		      	</div>
+			</span>
+			<a class="list-group-item media"  ng-repeat="buser in busUsers" ng-href="#/settings/business/{{businessId}}/users/{{buser.$id}}">
+			      <div class="pull-left">
+			        	<i class="fa fa-user chat-user-avatar"></i>
+			      </div>
+
+			      <div class="media-body">
+			          <h5 class="media-heading">{{buser.firstName}} {{buser.lastName}}
+			          </h5>
+			          
+			          <p>{{buser.email}}</p>
+			      </div>
+		    	</a>
+		    	<span class="list-group-item list-divider"></span>
+		    	<a href="#/settings/business/{{businessId}}/profile" class="list-group-item">
+		    		<div class="pull-left">
+			        	<i class="fa fa-wrench list-icon"></i>
+			      </div>
+			      <div class="media-body">
+					<h4 class="media-heading">Profile toggle
+		        			<i class="fa fa-chevron-right pull-right"></i>
+					</h4>
+				</div>
+		    	</a>
+		</div>
+		<button ng-click="deleteBusiness(business.$id)" class="btn btn-danger btn-block">Delete Business</button>
+	</div>
+</div>

@@ -1,0 +1,212 @@
+ <div content-for="title">
+  <span>{{business.name}}</span>
+</div>
+
+<div content-for="backBtn">
+	<a ng-href="{{oldHash}}" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+<div class="scrollable scrollable-list">
+  <div class="scrollable-content">
+		<!-- <div class="shortcut-group section-content">
+			<ul class="quick-menu list-unstyled">
+				<li class="blue primary" ng-if="following == false">
+					<a href ng-click="follow(businessId, userId)">
+						<i class="fa fa-hand-o-right"></i>
+						<span>Follow</span>
+					</a>
+				</li>
+				<li class="yellow warning" ng-if="following == true">
+					<a href ng-click="unfollow(businessId, userId)">
+						<i class="fa fa-thumbs-o-down"></i>
+						<span>Unfollow</span>
+					</a>
+				</li>
+				<li class="inverse " ng-if="chat == true">
+					<a href="#/businesses/{{businessId}}/rooms/{{userId}}">
+						<i class="fa fa-comments-o"></i>
+						<span>Chat</span>
+					</a>
+				</li>
+				<li class="yellow warning" ng-if="chat == false">
+					<a href ng-click="startChat(businessId, userId)">
+						<i class="fa fa-comment"></i>
+						<span>Start Chat</span>
+					</a>
+				</li>
+			</ul>
+		</div> -->
+		<div class="list-group">
+			<div class="list-group-item list-head">
+				<h3>{{business.name}}<br/>
+				<small>This is a demo of Mobile Angular UI</small>
+				</h3>
+			</div>
+			<div class="list-group-item list-head" style="height:50px; background:#ffffff;">
+				<div class="navbar navbar-app navbar-absolute-bottom navbar-inverse">
+				      <div class="btn-group justified" >
+				        	<a href="#Tab1"
+					         	toggle="on"
+					         	active-class="active"
+				         		class="btn btn-navbar" style="font-size:20px;"><i class="fa fa-briefcase fa-navbar"></i>
+				         	</a>
+				         	<a href="#Tab2"
+					         	toggle="on"
+					         	active-class="active"
+				         		class="btn btn-navbar" style="font-size:25px;"><i class="fa typcn typcn-user-add fa-navbar"></i>
+				         	</a>
+				         	<a href="#Tab3"
+					         	toggle="on"
+					         	active-class="active"
+				         		class="btn btn-navbar" style="font-size:20px;"><i class="fa fa-sitemap fa-navbar"></i>
+				         	</a>
+				      </div>
+				</div>
+			</div>
+			<div class="list-group-item">
+				<h4 class="list-group-heading">
+					<!-- <button type="button" class="btn btn-default"><i class="fa fa-cogs"></i></button> -->
+					<button class="btn btn-inverse" ng-click="startChat(businessId, userId)" ng-if="chat == false">
+						Start Chat <i class="fa fa-comment"></i>
+					</button>
+					<a class="btn btn-primary" href="#/businesses/{{businessId}}/rooms/{{userId}}" ng-if="chat == true">
+						 Chat <i class="fa fa-comments-o"></i>
+					</a>
+					<button class="btn btn-warning" ng-click="killChat(businessId, userId)" ng-if="chat == true">
+						Kill Chat <i class="fa fa-times"></i>
+					</button>
+					
+					<div class="pull-right">
+						<button class="btn btn-default" ng-click="follow(businessId, userId)" ng-if="following == false">
+							<i class="fa typcn typcn-user-add typcn-btn"></i> Follow
+						</button>
+						<button class="btn btn-primary" ng-click="unfollow(businessId, userId)" ng-if="following == true">
+							<i class="fa fa-check"></i> Following
+						</button>
+					</div>
+				</h4>
+			</div>
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane" 
+			          toggleable 
+			          default="active"
+			          active-class="active" 
+			          id="Tab1"
+			          exclusion-group="myTabs">
+			    	<div class="list-group">
+					<!-- <div class="list-group-item media">
+						<div class="pull-left">
+							<i class="fa fa-gamepad feature-icon"></i>
+						</div>
+						<div class="media-body">
+							<h3 class="media-heading">Play around a little</h3>
+							Open the sidebar and start testing features
+						</div>
+					</div> -->
+					<!-- <span class="list-group-item list-divider"></span> -->
+					<span class="list-group-item media" ng-if="business.phone; business.settings.showPhone">
+						<span class="pull-left">
+							<i class="fa fa-phone list-icon"></i>
+						</span>
+						<div class="media-body">
+							<h5 class="media-heading">{{business.phone}}</h5>
+						</div>
+					</span>
+					<span class="list-group-item media" ng-if="business.email; business.settings.showEmail">
+						<span class="pull-left">
+							<i class="fa fa-envelope list-icon"></i>
+						</span>
+						<div class="media-body">
+							<h5 class="media-heading">{{business.email}}</h5>
+						</div>
+					</span>
+					<span class="list-group-item media" ng-if="business.twitter; business.settings.showTwitter">
+						<span class="pull-left">
+							<i class="fa fa-twitter list-icon"></i>
+						</span>
+						<div class="media-body">
+							<h5 class="media-heading">{{business.twitter}}</h5>
+						</div>
+					</span>
+					<span class="list-group-item media" ng-if="business.facebook; business.settings.showFacebook">
+						<span class="pull-left">
+							<i class="fa fa-facebook list-icon"></i>
+						</span>
+						<div class="media-body">
+							<h5 class="media-heading">{{business.facebook}}</h5>
+						</div>
+					</span>
+					<span class="list-group-item list-divider"></span>
+					<span class="list-group-item media" ng-if="business.users; business.settings.showUsers">
+						<div class="pull-left">
+				        		<i class="fa fa-users list-icon"></i>
+				      	</div>	
+				      	<div class="media-body">
+				      		<h4 class="media-heading">Employees</h4>
+				      	</div>
+					</span>
+					<a class="list-group-item media"  ng-repeat="buser in busUsers" ng-href="#/users/{{buser.$id}}" ng-if="business.users; business.settings.showUsers">
+					      <div class="pull-left">
+					        	<i class="fa fa-user chat-user-avatar"></i>
+					      </div>
+
+					      <div class="media-body">
+							<h5 class="media-heading">{{buser.firstName}} {{buser.lastName}}
+					          	</h5>
+					          	<p>{{buser.email}}</p>
+					      </div>
+					
+				    	</a>
+				</div>
+			</div>
+			<div class="tab-pane" 
+			          toggleable 
+			          active-class="active" 
+			          id="Tab2"
+			          exclusion-group="myTabs">
+			    	<div class="list-group">
+			    		<span class="list-group-item media" ng-if="business.followers; business.settings.showFollowers">
+						<div class="pull-left">
+				        		<i class="typcn typcn-user-add list-typcn"></i>
+				      	</div>	
+				      	<div class="media-body">
+				      		<h4 class="media-heading">Followers</h4>
+				      	</div>
+					</span>
+					<a class="list-group-item media"  ng-repeat="fuser in followers" ng-href="#/users/{{fuser.$id}}" ng-if="business.followers; business.settings.showFollowers">
+					      <div class="pull-left">
+					        	<i class="fa fa-user chat-user-avatar"></i>
+					      </div>
+
+					      <div class="media-body">
+							<h5 class="media-heading">{{fuser.firstName}} {{fuser.lastName}}
+					          	</h5>
+					          	<p>{{fuser.email}}</p>
+					      </div>
+					
+				    	</a>
+			    	</div>
+			</div>
+			<div class="tab-pane" 
+			          toggleable 
+			          active-class="active" 
+			          id="Tab3"
+			          exclusion-group="myTabs">
+			    	<div class="list-group">
+			    		<span class="list-group-item media" ng-if="business.followers; business.settings.showFollowers">
+						<div class="pull-left">
+				        		<!-- <i class="typcn typcn-user-add list-typcn"></i> -->
+				        		<i class="fa fa-sitemap list-icon"></i>
+				      	</div>	
+				      	<div class="media-body">
+				      		<h4 class="media-heading">Network</h4>
+				      	</div>
+					</span>
+			    	</div>
+			</div>
+
+		</div>
+	</div>
+</div>

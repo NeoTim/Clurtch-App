@@ -1,0 +1,43 @@
+ <div content-for="title">
+  <span ng-show="account.firstName">{{account.firstName}} {{account.lastName}}</span>
+  <span ng-hide="account.firstName">{{account.email}}</span>
+</div>
+<div content-for="navbarAction">
+  	<div ng-click="editMode=!editMode" class="btn btn-navbar">
+		 Edit
+	</div>
+</div>
+
+<div class="navbar navbar-app navbar-absolute-bottom" content-for="bottomControl">
+		<div class="" style="margin:5px 5px 5px 5px; width:70%; float:left;">
+			<textarea msd-elastic ng-model="message" class="form-control" style="height:40px; border-radius:5px; -webkit-border-radius:5px;"></textarea>
+		</div>
+		
+			<button type="button" class="btn  btn-navbar pull-right" ng-click="addMessage(userId, user.username, message)">Send</button>
+		
+	
+</div>
+
+<div class="scrollable">  
+  	<div class="scrollable-content ">
+		<div content-for="backBtn">
+			<a ng-href="{{oldHash}}" class="btn btn-navbar">
+				<i class="fa fa-chevron-left"></i> 
+			</a>
+		</div>
+		<ul class="list-group">
+
+			<li transit class="list-group-item media" ng-repeat="(mid, msg) in messages" ng-class="{alignRight: msg.id == userId}">
+				<span ng-show="editMode" class="pull-left ft-danger"  ng-click="deleteMessage(mid)">
+					<i class="fa fa-minus-circle slide-left "></i>
+				</span>
+				<div class="media-body">
+					<div class="media-heading">{{msg.message}}</div>
+					<span>{{msg.username}}</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- <button data-ng-click="killChat(accountId, userId)" type="button" class="btn btn-danger">Kill Chat</button> -->

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" class="overthrow-enabled">
+<head>
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>Clurtch</title>
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+  <link href="bower_components/typicons/src/font/typicons.min.css" rel="stylesheet">
+  <link href="components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <!-- <link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/> -->
+  <!-- <link href="css/select2-bootstrap.css" rel="stylesheet" type="text/css"/> -->
+  <!-- <link href="css/select2.css" rel="stylesheet" type="text/css"/> -->
+  <!-- <link rel="stylesheet" href="css/app.css"/> -->
+  <!-- <link rel="stylesheet" href="components/angular-snap/angular-snap.css"/> -->
+  <!-- <link href="css/route.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="bower_components/select2/select2.css">
+  <link rel="stylesheet" href="components/mobile/css/mobile-angular-ui-base.min.css" />
+  <link rel="stylesheet" href="components/mobile/css/mobile-angular-ui-desktop.min.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-switch/build/css/bootstrap2/bootstrap-switch.css">
+  <link rel="stylesheet" href="bower_components/ngAnimate/css/ng-animation.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/examples.css" />
+  <style type="text/css">
+
+
+.app {
+  background-color: #ffffff;
+  background: #ffffff;
+}
+
+  </style>
+<script type="text/javascript" src="components/jquery/dist/jquery.js"></script>
+</head>
+<body 
+        ng-controller="MainController"  
+        ng-swipe-left="toggle('rightSidebar', 'on')"
+        ng-swipe-right="toggle('mainSidebar', 'on')">
+
+
+  <div ng-include="'sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
+
+  <!-- <div ng-include="'sidebarRight.html'" class="sidebar sidebar-right" toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div> -->
+
+  <div class="app">
+    <!-- Navbar -->
+    <div class="navbar navbar-app navbar-{{color}} navbar-absolute-top">
+
+        <div transit class="navbar-brand navbar-brand-center" yield-to="title">
+          <span>Clurtch</span>
+        </div>
+
+          <div class="btn-group pull-left" yield-to="backBtn">
+                <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+                      <i class="fa fa-bars"></i> Menu
+                </div>
+          </div>
+
+          <div class="btn-group pull-right" yield-to="navbarAction">
+
+          </div>
+                
+    </div>
+
+    <div class="navbar navbar-app navbar-absolute-bottom" yield-to="bottomControl">
+      <div class="btn-group justified" >
+        <a href="#/business" class="btn btn-navbar" style="font-size:20px;"><i class="fa fa-briefcase fa-navbar"></i></a>
+        <a href="#/user" class="btn btn-navbar" style="font-size:20px;"><i class="fa fa-home fa-navbar"></i></a>
+        
+        <a href="#/find" class="btn btn-navbar" style="font-size:20px;"><i class="fa fa-search fa-navbar"></i></a>
+
+      </div>
+    </div>
+
+    <div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading">
+          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <ng-view class="app-content" ng-hide="loading"></ng-view>
+      </div>
+    </div>
+
+  
+
+  </div>
+
+
+
+
+<!--   <div>AngularFire-seed v<span app-version></span></div> -->
+
+<script src='components/hammerjs/hammer.min.js'></script>
+<!-- <script src='components/angular-snap/snap.min.js'></script> -->
+
+<!-- <script type="text/javascript" src="bower_components/jquery/jquery.js"></script> -->
+<script type="text/javascript" src="bower_components/select2/select2.js"></script>
+
+
+
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'></script>
+<!-- <script src="components/mobile/js/angular.min.js"></script> -->
+  <script src="angular/angular.min.js"></script>
+  <script src="angular/angular-animate.min.js"></script>
+  <script src="angular/angular-route.min.js"></script>
+
+<!-- <script src="components/mobile/js/angular-route.js"></script> -->
+
+  <script type="text/javascript" src="bower_components/angular-ui-select2/src/select2.js"></script>
+  <script src="bower_components/bootstrap-switch/build/js/bootstrap-switch.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script> -->
+  <script src="https://cdn.firebase.com/libs/angularfire/0.7.0/angularfire.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-animate.js"></script> -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script> -->
+<!-- <script type="text/javascript" src="components/angular-route-segment/build/angular-route-segment.js"></script> -->
+<script src='components/angular-hammer/angular-hammer.js'></script>
+<!-- <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap.js"></script> -->
+<!-- <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script> -->
+<!-- <script type="text/javascript" src="components/angular-snap/angular-snap.js"></script> -->
+<script type="text/javascript" src="bower_components/angular-elastic/elastic.js"></script>
+
+  <script src="components/mobile/js/mobile-angular-ui.min.js"></script>
+  <script src="components/mobile/js/mobile-angular-ui-touch-fastclick.min.js"></script>
+<script src="components/mobile/js/mobile-angular-ui-scrollable-overthrow.min.js"></script>
+<!-- <script src="bower_components/ngAnimate/js/angular-animate.min.js"></script> -->
+<!-- <script src="components/mobile/js/mobile-angular-ui-scrollable-iscroll.min.js"></script> -->
+
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/controllers/messageCtrl.js"></script>
+  <script src="js/controllers/archivedCtrl.js"></script>
+  <script src="js/controllers/findCtrl.js"></script>
+  <script src="js/controllers/profileCtrl.js"></script>
+  <script src="js/controllers/followCtrl.js"></script>
+  <script src="js/controllers/inboxCtrl.js"></script>
+  <script src="js/controllers/settingsCtrl.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/directives/bsSwitch.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/module.waitForAuth.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
+  <script src="js/services/firebase-resource.js"></script>
+  <script src="js/services/resources.js"></script>
+  <script src="js/services/angularFireCollectionExtended.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48036416-1', 'mobileangularui.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

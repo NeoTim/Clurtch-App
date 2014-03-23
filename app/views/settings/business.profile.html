@@ -1,0 +1,155 @@
+<div content-for="title">
+    <span >Toggle Profile</span>
+</div>
+<div content-for="backBtn">
+	<a ng-href="{{oldHash}}" class="btn btn-navbar">
+		<i class="fa fa-chevron-left"></i> 
+	</a>
+</div>
+
+<div class="scrollable scrollable-list">
+  	<div class="scrollable-content">
+    		<ul class="list-group">
+    			<li class="list-group-item list-divider"></li>
+		      <li class="list-group-item media">
+			      	<span class="pull-left">
+			      		<i class="fa fa-phone list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Phone
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showPhone"
+						            type="radio"
+						            ng-change="toggle('showPhone', settings.showPhone)"
+						            switch-active="{{ isChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}">
+						            </bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item media">
+		      		<span class="pull-left">
+			      		<i class="fa fa-envelope list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Email
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showEmail"
+						            type="radio"
+						            ng-change="toggle('showEmail', settings.showEmail)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item media">
+		      		<span class="pull-left">
+			      		<i class="fa fa-twitter list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Twitter
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showTwitter"
+						            type="radio"
+						            ng-change="toggle('showTwitter', settings.showTwitter)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item media">
+		      		<span class="pull-left">
+			      		<i class="fa fa-facebook list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Facebook
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showFacebook"
+						            type="radio"
+						            ng-change="toggle('showFacebook', settings.showFacebook)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item media">
+		      		<span class="pull-left">
+			      		<i class="fa fa-users list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Users
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showUsers"
+						            type="radio"
+						            ng-change="toggle('showUsers', settings.showUsers)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item media">
+		      		<span class="pull-left">
+			      		<i class="fa fa-users list-icon"></i>
+			      	</span>
+					<h4 class="media-heading">
+						Show Followers
+		        			<span class="pull-right">
+					            <bs-switch
+						            ng-model="settings.showFollowers"
+						            type="radio"
+						            ng-change="toggle('showFollowers', settings.showFollowers)"
+						            switch-active="{{ canChat }}"
+						            switch-on-label="{{ onLabel }}"
+						            switch-off-label="{{ offLabel }}"
+						            switch-on="{{ on }}"
+						            switch-off="{{ off }}"
+						            switch-animate="{{ animate }}"
+						            switch-size="{{ size }}"
+						            switch-label="{{ label }}"
+						            switch-icon="{{ icon }}"></bs-switch>
+					      </span>
+					</h4>
+		      </li>
+		      <li class="list-group-item list-divider"></li>
+		</ul>
+  	</div>
